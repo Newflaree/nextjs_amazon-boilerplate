@@ -1,8 +1,19 @@
+// Layouts
+import { MainLayout } from '@/ui/layouts';
+// Views
+import { HomeView } from '@/ui/views';
 
-const AppPage = () => {
+
+const HomePage = () => {
   return (
-    <div>AppPage</div>
+    <MainLayout
+      pageTitle='Inicio'
+      pageDesc=''
+      pageKeywords=''
+    >
+      <HomeView />
+    </MainLayout>
   );
 }
 
-export default AppPage;
+export default HomePage;
