@@ -36,30 +36,29 @@ export const MainLayout = ({
     <Fragment>
       <Head>
         <title>{ pageTitle }</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={ pageDesc } />
-        <meta name="keywords" content={ pageKeywords } />
-        <meta name="robots" content="index" />
-        <meta name="language" content="es" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='description' content={ pageDesc } />
+        <meta name='keywords' content={ pageKeywords } />
+        <meta name='robots' content='index' />
+        <meta name='language' content='es' />
 
-        <meta property="og:title" content={ pageTitle } />
-        <meta property="og:description" content={ pageDesc } />
-        <meta property="og:image" content={ pageSocialImage } />
-        <meta property="og:url" content={ pageUrl } />
+        <meta property='og:title' content={ pageTitle } />
+        <meta property='og:description' content={ pageDesc } />
+        <meta property='og:image' content={ pageSocialImage } />
+        <meta property='og:url' content={ pageUrl } />
       </Head>
 
       <Navbar /> 
 
-      <main>
+      <main className='container mt-5'>
         {
           isLoading
             ? <LoadingPage />
-            : <>{ children }</>
+            : <Fragment>{ children }</Fragment>
         }
       </main>
 
       <Footer />
     </Fragment>
-
   );
 }
