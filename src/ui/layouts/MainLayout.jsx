@@ -1,5 +1,5 @@
 // React
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 // NextJS
 import Head from 'next/head';
 // Components
@@ -20,6 +20,18 @@ export const MainLayout = ({
   pageSocialImage= '',
   pageUrl=''
 }) => {
+  const [ isLoading, setIsLoading ] = useState( true );
+
+  useEffect( () => {
+    loadingControl();
+  }, [] );
+
+  const loadingControl = () => {
+    setTimeout( () => {
+      setIsLoading( false );
+    }, 500 );
+  }
+
   return (
     <Fragment>
       <Head>
@@ -39,9 +51,11 @@ export const MainLayout = ({
       <Navbar /> 
 
       <main>
-        <LoadingPage />
-
-        { children }
+        {
+          isLoading
+            ? <LoadingPage />
+            : <>{ children }</>
+        }
       </main>
 
       <Footer />
