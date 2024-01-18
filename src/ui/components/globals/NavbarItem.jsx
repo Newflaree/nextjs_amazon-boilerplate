@@ -1,9 +1,9 @@
 
 export const NavbarItem = ({ path, itemName }) => {
   return (
-    <li className="nav-item">
+    <li className='nav-item'>
       <NextLink
-        href="/"
+        href='/'
         passHref
         legacyBehavior
       >
